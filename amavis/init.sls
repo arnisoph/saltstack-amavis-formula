@@ -11,6 +11,27 @@ amavis:
     - {{ datamap.service.ensure|default('running') }}
     - name: {{ datamap.service.name|default('amavis') }}
     - enable: {{ datamap.service.enable|default(True) }}
+{% if datamap.user.manage|default(False) %}
+  group:
+    - present
+    - name: {{ datamap.group.name|default('amavis') }}
+    - gid: {{ datamap.group.gid|default(242) }}
+    - system: True
+  user:
+    - present
+    - name: {{ datamap.user.name|default('amavis') }}
+    - uid: {{ datamap.group.uid|default(242) }}
+    - gid: {{ datamap.group.gid|default(242) }}
+    - home: {{ datamap.user.home }}
+    - createhome: {{ datamap.user.createhome|default(True) }}
+    - shell: {{ datamap.user.shell|default('/bin/sh') }}
+    - system: True
+    - fullname: AMaViS system user
+    - require:
+      - group: amavis
+    - require_in:
+      - pkg: amavis
+{% endif %}
 
 {% for i in datamap.config.manage|default([]) %}
   {% set f = datamap.config[i] %}

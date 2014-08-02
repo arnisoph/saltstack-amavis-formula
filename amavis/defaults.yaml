@@ -27,7 +27,6 @@ Debian:
     - /etc/amavis/conf.d/50-user
   service: {}
   user:
-    name: foo
-  group:
-    name: foo
+    home: /var/lib/amavis
+  group: {}
 {% endload %}
