@@ -1,0 +1,33 @@
+{% load_yaml as rawmap %}
+Debian:
+  pkgs:
+    - amavisd-new
+    - p7zip
+    - arj
+    - zoo
+    - rpm2cpio
+    - cabextract
+    - arc
+    - lzop
+    - tnef
+  config:
+    manage:
+      - main
+    main:
+      path: /etc/amavis/conf.d/99-main
+  configs_absent:
+    - /etc/amavis/conf.d/01-debian
+    - /etc/amavis/conf.d/05-domain_id
+    - /etc/amavis/conf.d/05-node_id
+    - /etc/amavis/conf.d/15-av_scanners
+    - /etc/amavis/conf.d/15-content_filter_mode
+    - /etc/amavis/conf.d/20-debian_defaults
+    - /etc/amavis/conf.d/25-amavis_helpers
+    - /etc/amavis/conf.d/30-template_localization
+    - /etc/amavis/conf.d/50-user
+  service: {}
+  user:
+    name: foo
+  group:
+    name: foo
+{% endload %}
