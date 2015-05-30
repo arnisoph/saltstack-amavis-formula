@@ -16,8 +16,12 @@ saltstack-amavis-formula
     :target: https://github.com/bechtoldt/saltstack-amavis-formula/blob/master/LICENSE
 
 .. image:: https://img.shields.io/badge/gitter-chat-brightgreen.svg
-    :alt: Join Chat
+    :alt: Join Gitter Chat
     :target: https://gitter.im/bechtoldt/saltstack-amavis-formula?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
+.. image:: https://img.shields.io/badge/%23salt%20@%20Freenode-chat-brightgreen.svg
+    :alt: Join Internet Relay Chat
+    :target: http://webchat.freenode.net/?channels=%23salt&uio=d4
 
 Salt Stack Formula to set up and configure Amavis (amavisd-new), a high-performance interface between mailer (MTA) and content checkers
 
